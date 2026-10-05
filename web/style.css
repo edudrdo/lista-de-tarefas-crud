@@ -1,0 +1,95 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.container {
+  background: #fff;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+#aviso {
+  display: none;
+  background: #f8d7da;
+  color: #721c24;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+#mensagem {
+  min-height: 18px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #155724;
+}
+#mensagem.erro { color: #c0392b; }
+
+form { display: flex; gap: 8px; margin-bottom: 16px; }
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+}
+button:hover { opacity: 0.85; }
+
+.btn-add { background: #2d7ff9; font-size: 15px; padding: 10px 16px; }
+.btn-ok { background: #28a745; }
+.btn-edit { background: #6c757d; }
+.btn-del { background: #dc3545; }
+
+ul { list-style: none; }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  border-bottom: 1px solid #eee;
+}
+li:last-child { border-bottom: none; }
+
+.info { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.icone { font-size: 18px; }
+.texto { display: flex; flex-direction: column; min-width: 0; }
+.titulo { font-size: 16px; color: #333; word-break: break-word; }
+.data { font-size: 12px; color: #999; margin-top: 2px; }
+.concluida .titulo { text-decoration: line-through; color: #999; }
+
+.acoes { display: flex; gap: 6px; }
+
+.vazio { text-align: center; color: #888; padding: 20px 0; }
