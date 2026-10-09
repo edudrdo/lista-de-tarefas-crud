@@ -59,7 +59,7 @@ def atualizar(id, titulo, status):
     titulo = titulo.strip()
     if not titulo:
         raise ValueError("O titulo não pode ficar vazio")
-    if status not in ("pendente", "concluida"):
+    if status not in ("pendente", "concluída"):
         raise ValueError("Status inválido")
     
     conexao = conectar()

@@ -36,8 +36,8 @@ def rota_criar(dados: TarefaIn):
         raise HTTPException(status_code=400, detail=str(erro))
     return {"id": novo_id, "titulo": dados.titulo.strip(), "status": "pendente"}
 
-@app.post("/tarefas/{id}")
-def att_rota(id: int, dados: TarefaIn):
+@app.put("/tarefas/{id}")
+def rota_atualizar(id: int, dados: TarefaIn):
     try:
         alterou = atualizar(id, dados.titulo, dados.status)
     except ValueError as erro: 
@@ -48,10 +48,10 @@ def att_rota(id: int, dados: TarefaIn):
     
     return {"id": id, "titulo": dados.titulo.strip(), "status": dados.status}
 
-@app.delete("/tarefa/{id}")
+@app.delete("/tarefas/{id}")
 def rota_excluir(id: int):
     if not excluir(id):
-        raise HTTPException(status_code=404, detail="Tareda não encontrada")
-    return {"mensagem", "Tarefa deletada"}
+        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+    return {"mensagem": "Tarefa deletada"}
 
 app.mount("/", StaticFiles(directory=PASTA / "web", html=True), name="web")
